@@ -1,6 +1,7 @@
-package praktikum3sll;
+package TugasWeek3_StrukturData_RifqiReissalArasy.jurnalmandiri;
 
-import java.io.*;  
+import java.io.*;
+import java.util.Scanner;
 
 class Node {
     int data;
@@ -84,6 +85,20 @@ public class SingleLinkedList {
         return 0;
     } // eodelete
 
+    public void search(int data) {
+        Node current = head;
+        int position = 1;
+        while (current != null) {
+            if (current.data == data) {
+                System.out.println("Data " + data + " ditemukan pada urutan ke-" + position);
+                return;
+            }
+            current = current.next;
+            position++;
+        }
+        System.out.println("Data " + data + " tidak ditemukan");
+    }
+
     public void printList() {
         Node current = head;
         System.out.print("Single LinkedList: ");
@@ -100,6 +115,64 @@ public class SingleLinkedList {
     }
 
     void runThis() {
-        // Buat proses pengisian data
-    } // eoRunThis
-} // eoSingleLinkList
+        System.out.println("=========================");
+        System.out.println("Kode deret tidak Terurut");
+        System.out.println("=========================");
+        insert(5);
+        insert(1);
+        insert(3);
+        insert(2);
+        insert(7);
+        insert(6);
+        insert(9);
+        insert(8);
+        printList();
+
+        Scanner scanner = new Scanner(System.in); 
+        System.out.print("\nMasukkan data yang ingin dicari: ");
+        int dataDicari = scanner.nextInt(); 
+        search(dataDicari); 
+
+        // System.out.println("\nMenghapus data 5, 1, 9, dan 99:");
+        // delete(5);
+        // printList();
+        // delete(1);
+        // printList();
+        // delete(9);
+        // printList();
+        // delete(99);
+        // printList();
+
+        System.out.println("");
+
+        System.out.println("=======================");
+        System.out.println("Kode Deret Terurut");
+        System.out.println("=======================");
+        SingleLinkedList sllTerurut = new SingleLinkedList();
+        sllTerurut.insertSorted(5);
+        sllTerurut.insertSorted(1);
+        sllTerurut.insertSorted(3);
+        sllTerurut.insertSorted(2);
+        sllTerurut.insertSorted(7);
+        sllTerurut.insertSorted(6);
+        sllTerurut.insertSorted(9);
+        sllTerurut.insertSorted(8);
+        sllTerurut.printList();
+
+        // System.out.println("\nMenghapus data 5, 1, 9, dan 99:");
+        // sllTerurut.delete(5);
+        // sllTerurut.printList();
+        // sllTerurut.delete(1);
+        // sllTerurut.printList();
+        // sllTerurut.delete(9);
+        // sllTerurut.printList();
+        // sllTerurut.delete(99);
+        // sllTerurut.printList();
+
+        System.out.print("\nMasukkan data yang ingin dicari pada list terurut: ");
+        int dataDicariTerurut = scanner.nextInt(); 
+        sllTerurut.search(dataDicariTerurut);  
+    
+        scanner.close();
+    }
+}

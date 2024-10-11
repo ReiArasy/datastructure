@@ -1,4 +1,4 @@
-package jurnalterbimbing;
+package TugasWeek3_StrukturData_RifqiReissalArasy.jurnalterbimbing;
 
 import java.io.*;
 
