@@ -17,16 +17,21 @@ class SistemAkademik{
         void runThis(){
             kelas = new SLLKelas(); 
             mahasiswa = new SLLMahasiswa(); 
-            /*
-    1.	Lakukan penambahan kelas (prosedurTambahKelas) dengan data berikut dan tentukan secara manual ID kelas 
-    a.	"SE-07-01"
-    b.	"SE-07-02" 
-    c.	"SE-07-03" 
-    d.	"SE-07-04" 
-    2.	Tambahkan data mahasiswa (ProsedurTambahMahasiswa), buat 10 mahasiswa dan tentukan nim secara manual
-    3.	Petakan setiap mahasiswa kedalam kelas secara merata
-    4.	Tampilkan data seluruh kelas yang telah ditambahkan, prosedurShowAllKelas()        
-    */
+        
+            prosedurTambahKelas(1, "SE-07-01");
+            prosedurTambahKelas(2, "SE-07-02");
+            prosedurTambahKelas(3, "SE-07-03");
+            prosedurTambahKelas(4, "SE-07-04");
+            prosedurShowAllKelas();
+
+            prosedurTambahMahasiswa(1, "Yanto");
+            prosedurSetKelas(1, 1);
+            prosedurTambahMahasiswa(2, "Rapid");
+            prosedurTambahMahasiswa(3, "Seta");
+            prosedurTambahMahasiswa(4, "Arasy");
+            prosedurShowAllMahasiswa();
+            prosedurSetKelas(1, 2);
+            prosedurShowAllMahasiswa();
         } 
     
         void prosedurTambahKelas(int id, String nama){
@@ -47,7 +52,6 @@ class SistemAkademik{
         }
 
         void prosedurSetKelas(int idMahasiswa, int idKelas){
-           NodeMahasiswa
             System.out.println("Prosedur pemetakan mahasiswa ke kelas");
             NodeKelas k = kelas.search(idKelas);
             int returnValue = mahasiswa.setKelas(idMahasiswa, k);
